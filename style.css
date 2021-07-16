@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Josefin+Sans&display=swap');
+
+:root{
+    --font1 : 'Bree Serif', serif;
+
+    --font2 : 'Josefin Sans', sans-serif;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+header{
+    height: 100vh;
+    background-image: url(Images/food-366875_1280.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    width: 80%;
+    margin: 30px 130px;
+    line-height: 100px;
+    background-color: rgb(221, 48, 48);
+    border-radius: 0 30px;
+    position: absolute;
+   
+}
+
+
+nav a{
+    text-decoration: none;
+    color: white !important;
+    margin: 0 10px;
+    font-size: 20px;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-family: var(--font1);
+    /* background-color: white; */
+    
+}
+
+.hover:hover{
+    background-color: rgb(255, 0, 0);
+    color: white;
+    padding: 5px 20px;
+    transition: 0.3s ease-in;
+    border-radius: 20px;
+
+}
+
+.active{
+    background-color: rgb(255, 0, 0);
+    color: white;
+    padding: 5px 20px;
+    transition: 0.3s ease-in;
+    border-radius: 20px;
+
+}
+
+.middle{
+    height: 100vh;
+    color: white;
+    
+}
+
+.middlecontent{
+    
+    font-family: var(--font2);
+}
+
+.middlecontent h2{
+    border-bottom: 2px solid white;
+    border-radius: 20px;
+    margin: 30px 0;
+    font-size: 40px;
+
+}
+
+.middlecontent p{
+    font-size: 20px;
+    margin: 35px 0;
+
+}
+
+.middlecontent a{
+    text-decoration: none;
+    color: white;
+}
+
+.buttons{
+    background-color: rgb(67, 66, 68);
+    color: white !important;
+    padding: 10px 10px;
+    margin: 10px 10px !important;
+    font-size: 20px;
+    border-radius: 20px;
+    
+}
+
+.middlecontent a:hover{
+
+    background-color: white ;
+    color: rgb(67, 66, 68) !important;
+    transition: 0.5s ease-in;
+}
+
+main{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(Images/pexels-andrea-piacquadio-3769980.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.heading {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    border-radius: 20px 0;
+    align-items: center;
+}
+
+
+.tipcalculator{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+
+.column1{
+    border: 2px solid white;
+    border-radius: 50px 50px;
+    padding: 20px;
+}
+
+.column2{
+    border: 2px solid white;
+    border-radius: 50px 50px;
+    padding: 70px 20px;
+}
+
+.column1heading{
+   margin: -40px 70px 20px 70px ;
+   background-color: red;
+   padding: 6px 0 3px 0;
+   border-radius: 0 20px;
+   
+}
+
+.column2heading{
+    margin: -90px 70px 20px 70px ;
+    background-color: red;
+    padding: 6px 0 3px 0;
+    border-radius: 0 20px;
+    
+ }
+
+/* .row{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 40px !important;
+    padding: 70px;
+    border: 10px solid red;
+    border-radius: 50px;
+} */
+
+/* .row .heading{
+    margin: -100px 0px 20px 0px !important;
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    width: 85%;
+    text-align: center; 
+    border-radius: 20px;
+}  */
+
+/* fieldset{
+    padding: 30px;
+    background-color: rgb(158, 99, 212);
+    width: 30%;
+    border-radius: 20px 10px;
+}
+
+legend{
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    width: 85%;
+    text-align: center; 
+    
+} */
+
+.label{
+   color: white;
+   text-align: center;
+   background-color: black;
+
+}
+
+.tipcalculator input{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid white;
+    border-radius: 20px;
+    width: 300px;
+    padding: 10px;
+    margin: 15px;
+    background: transparent;
+    color: white;
+}
+
+/* input [type="number"]{
+
+-webkit-appearance: textfield;
+-moz-appearance: textfield;
+appearance: textfield;
+} */
+
+:focus{
+    outline: none;
+    
+}
+
+
+
+button{
+    width: 200px;
+    background-color: black;
+    color: white;
+    border-radius: 1px 20px;
+    padding: 10px;
+}
+
+.container1{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+}
+
+.productheading{
+    font-family: var(--font2);
+    border-bottom: 2px solid red;
+    padding: 5px 20px;
+}
+
+h1{
+    border-bottom: 2px solid red;
+    border-radius: 20px;
+}
+
+.card1{
+    /* background-color: red; */
+    color: red;
+    padding: 20px 40px;
+    margin: 20px;
+    width: 25%;
+    font-family: var(--font2);
+}
+
+#aboutus{
+    height: 100vh;
+    /* width: 80%; */
+    margin: auto;
+    font-family: var(--font2);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(Images/pexels-andrea-piacquadio-3772524.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    padding: 20px;
+
+}
+
+#feedback{
+    height: 100vh;
+    font-family: var(--font1);
+}
+
+.formbg{
+    background-color: rgb(197, 142, 142);
+    color: white;
+
+}
+
+.footer{
+    background-color: rgb(224, 92, 92);
+    font-family: var(--font1);
+}

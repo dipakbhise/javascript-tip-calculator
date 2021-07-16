@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="We Are the Best in Service of Foods. Don't Worry We also have a Tip calculator with Total Bill and Tip Percentage.">
+
+    <meta name="keywords" content="Tip Calculator, Hotel, Food, Best Service, Bill Calculator">
+
+    <link rel="icon" href="Images/undraw_special_event_4aj8.svg">
+    <title>Tip Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+        <script src="https://kit.fontawesome.com/5c98d203b1.js" crossorigin="anonymous"></script>
+
+        
+
+</head>
+
+<body>
+
+
+    <header>
+
+        <nav>
+
+
+            <div class="logo"><a href="index.html">Hotel Website</a></div>
+
+            <div>
+                <a href="index.html" class="hover active">Home</a>
+                <a href="#calculator" class="hover">Tip Calculator</a>
+                <a href="#products" class="hover">Products</a>
+                <a href="#aboutus" class="hover">About Us</a>
+                <a href="#feedback" class="hover">Feedback</a>
+            </div>
+
+
+        </nav>
+
+        <div class="middle d-flex justify-content-center align-items-center =">
+            <div class="text-center middlecontent">
+                <h2>Welcome...</h2>
+
+                <p>We Are Happy To Serve You...:)</p>
+
+                <a href="#calculator" class="buttons">Calculate Your Bill</a>
+
+                <a href="#products" class="buttons">Our Products</a>
+                
+            </div>
+
+
+        </div>
+
+
+    </header>
+
+    <main id="calculator">
+
+        <div class="d-flex justify-content-center align-items-center p-4 ">
+
+            <div class="heading text-center w-25">
+                <h4>Tip Calculator</h4>
+            </div>
+
+        </div>
+
+        <div class="tipcalculator">
+
+
+
+            <!-- <div class="row"> -->
+
+
+            <div class="column1 text-center text-light">
+
+                <div class="column1heading">
+                    <h4>Total Bill</h4>
+                </div>
+
+
+                <label for="bill">Enter Your Bill Amount</label>
+                <input type="text" id="bill" value="" oninput="amtNum(), BillCal(), tipCal()"
+                    placeholder="Only Numbers Allowed" autocomplete="off">
+
+                <label for="bill">Enter Tip percentage</label>
+                <input type="number" oninput="waiterservice(), BillCal(), tipCal()" onload="" step="5" min="0"
+                    id="tippercent" value="" autocomplete="off">
+                <p id="poor">How was the Service?</p>
+
+                <label for="bill">Total Tip Amount</label>
+                <input type="text" id="totaltip" value="" disabled>
+
+
+                <label for="bill">Total Bill</label>
+                <input type="text" id="totalbill" value="" disabled>
+                <!-- <button > Calculate </button> -->
+
+
+                <!-- Button trigger modal -->
+
+                <button onclick="BillCal()" type="button" class="btn btn-primary mx-5 my-2 rounded-pill"
+                    data-bs-toggle="modal" data-bs-target="#exampleModal"> Billing Details </button>
+
+
+                <!------------------------------- Modal Start------------------>
+
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-primary" id="exampleModalLabel">Billing Details</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-center" id="modaltotal">
+
+                                <div class="d-flex justify-content-between text-dark">
+                                    <div>
+                                        <p>Your Bill Amount is Rs</p>
+                                        <p>Your Tip Percent (in %) </p>
+                                        <p>Your Tip Amount is Rs</p>
+                                        <hr>
+                                        <p>Your Total Bill is Rs</p>
+                                    </div>
+
+                                    <div>
+                                        <p id="billamnt"></p>
+                                        <p id="tipprcnt"></p>
+                                        <p id="tipamnt"></p>
+                                        <p id="totalamnt"></p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!------------------------------------ Modal ENd------------ -->
+
+
+            <!---------------- Individual Html Start----------- -->
+
+
+            <div class="column2 text-center text-light">
+
+                <div class="column2heading">
+                    <h4>Individual Bill</h4>
+                </div>
+
+                <label for="bill">How Many Peoples Are sharing the Bill?</label>
+                <input type="number" id="persons" value="1" min="1" oninput=" tipCal()">
+
+                <label for="bill">Individual Tip Amount</label>
+                <input type="text" id="individualtip" value="" disabled>
+
+                <label for="bill">Individual Total Bill Amount</label>
+                <input type="text" id="individualbill" value="" disabled>
+
+
+                <!-- <button onclick="tipCal()"> Calculate </button> -->
+
+
+
+                <!-- Button trigger modal -->
+
+                <button onclick="BillCal(), tipCal()" type="button" class="btn btn-primary mx-5 my-2 rounded-pill"
+                    data-bs-toggle="modal" data-bs-target="#exampleModal1"> Total Billing Details </button>
+
+                <!------------------------------- Modal Start------------------>
+
+                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-primary" id="exampleModalLabel1">Billing Details</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body text-center" id="modaltotal">
+
+                                <div class="d-flex justify-content-between text-dark">
+                                    <div>
+                                        <!-- <h4>Group Bill</h4>  -->
+                                        <p>Your Bill Amount is Rs</p>
+                                        <p>Your Tip Percent (in %) </p>
+                                        <p>Your Tip Amount is Rs</p>
+                                        <hr>
+                                        <p>Your Total Bill is Rs</p>
+                                        <hr>
+
+
+                                        <!-- <h4>Individual Bill</h4>  -->
+
+                                        <p>Total Peoples (To Share the Bill)</p>
+                                        <p>Individual Net Bill Amount</p>
+                                        <p>Individual Tip Amount </p>
+                                        <hr>
+                                        <p>Individual Total Bill Amount</p>
+                                    </div>
+
+                                    <div>
+                                        <p id="billamnt1"></p>
+                                        <p id="tipprcnt1"></p>
+                                        <p id="tipamnt1"></p>
+                                        <p id="totalamnt1"></p>
+                                        <hr>
+
+                                        <p id="indipersons1" class=""></p>
+                                        <p id="netbill"></p>
+                                        <p id="inditipamnt1"></p>
+                                        <hr>
+                                        <p id="inditotal1"></p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                <!---------------- Individual Html End----------- -->
+
+
+
+
+            </div>
+
+
+
+            <!-- </div> -->
+
+        </div>
+
+
+    </main>
+
+
+    <section id="products">
+
+        <div class="d-flex justify-content-center align-items-center mt-4 "><h1 class="productheading">Our Products</h1></div>    
+
+        <div class="container1">
+
+            <div class="card1">
+
+                <div class="card-content text-center">
+
+                     <img src="Images/curry-with-chicken-onions-indian-food-asian-cuisine (1).jpg" alt="" class="w-100"> 
+                    <h1>Paneer</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, unde? lorem100</p>
+                    <div class="d-flex justify-content-between align-items-center mx-5">
+                        
+                        <div class="d-flex">
+                            <div>
+                                Price :
+                            </div>
+                            <p class="text-decoration-line-through mx-2">100</p>
+                            <p>80 Rs</p>
+                        </div>
+                    </div>
+                    <button class="btn-primary rounded-pill w-75 my-2">Add to Cart</button>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="card1">
+
+                <div class="card-content text-center">
+
+                    <img src="https://source.unsplash.com/1000x720/?food dish" alt="" class="w-100"> 
+                   <h1>Paneer</h1>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, unde? lorem100</p>
+                   <div class="d-flex justify-content-between align-items-center mx-5">
+                       
+                       <div class="d-flex">
+                           <div>
+                               Price :
+                           </div>
+                           <p class="text-decoration-line-through mx-2">100</p>
+                           <p>80 Rs</p>
+                       </div>
+                   </div>
+                   <button class="btn-primary rounded-pill w-75 my-2">Add to Cart</button>
+
+               </div>
+
+
+            </div>
+
+            <div class="card1">
+
+                <div class="card-content text-center">
+
+                    <img src="https://source.unsplash.com/1000x720/?foodie" alt="" class="w-100"> 
+                   <h1>Paneer</h1>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, unde? lorem100</p>
+                   <div class="d-flex justify-content-between align-items-center mx-5">
+                       
+                       <div class="d-flex">
+                           <div>
+                               Price :
+                           </div>
+                           <p class="text-decoration-line-through mx-2">100</p>
+                           <p>80 Rs</p>
+                       </div>
+                   </div>
+                   <button class="btn-primary rounded-pill w-75 my-2">Add to Cart</button>
+
+               </div>
+
+
+            </div>
+
+            
+
+
+
+        </div>
+
+        <div class="container1">
+
+            <div class="card1">
+
+                <div class="card-content text-center">
+
+                     <img src="https://source.unsplash.com/1000x720/?testy food" alt="" class="w-100"> 
+                    <h1>Paneer</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, unde? lorem100</p>
+                    <div class="d-flex justify-content-between align-items-center mx-5">
+                        
+                        <div class="d-flex">
+                            <div>
+                                Price :
+                            </div>
+                            <p class="text-decoration-line-through mx-2">100</p>
+                            <p>80 Rs</p>
+                        </div>
+                    </div>
+                    <button class="btn-primary rounded-pill w-75 my-2">Add to Cart</button>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="card1">
+
+                <div class="card-content text-center">
+
+                    <img src="https://source.unsplash.com/1000x720/?food product" alt="" class="w-100"> 
+                   <h1>Paneer</h1>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, unde? lorem100</p>
+                   <div class="d-flex justify-content-between align-items-center mx-5">
+                       
+                       <div class="d-flex">
+                           <div>
+                               Price :
+                           </div>
+                           <p class="text-decoration-line-through mx-2">100</p>
+                           <p>80 Rs</p>
+                       </div>
+                   </div>
+                   <button class="btn-primary rounded-pill w-75 my-2">Add to Cart</button>
+
+               </div>
+
+
+            </div>
+
+            <div class="card1">
+
+                <div class="card-content text-center">
+
+                    <img src="https://source.unsplash.com/1000x720/?food products" alt="" class="w-100"> 
+                   <h1>Paneer</h1>
+                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, unde? lorem100</p>
+                   <div class="d-flex justify-content-between align-items-center mx-5">
+                       
+                       <div class="d-flex">
+                           <div>
+                               Price :
+                           </div>
+                           <p class="text-decoration-line-through mx-2">100</p>
+                           <p>80 Rs</p>
+                       </div>
+                   </div>
+                   <button class="btn-primary rounded-pill w-75 my-2">Add to Cart</button>
+
+               </div>
+
+
+            </div>
+
+            
+
+
+
+        </div>
+
+
+    </section>
+
+    <section id="aboutus">
+
+        <div class="d-flex justify-content-center align-items-center  "><h2 class="productheading m-4">About Us</h2></div>   
+
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate eos, reiciendis corrupti eveniet expedita, saepe corporis architecto quis sequi iste et nulla doloremque! Aspernatur, blanditiis dolore nesciunt rerum inventore sint quam temporibus magni sit consequatur omnis! Aliquid rerum illo recusandae praesentium debitis placeat est mollitia unde deserunt distinctio, odio necessitatibus maxime maiores et iure cumque ea molestiae nobis quod nam suscipit voluptates amet. Asperiores, accusamus possimus? Placeat blanditiis quis repellat distinctio, rerum eligendi reiciendis. Pariatur quod nobis reiciendis veritatis tenetur voluptatem harum quas aliquid quibusdam placeat neque ipsum aut dolor accusantium reprehenderit amet vel quam voluptate alias, laboriosam cum exercitationem quidem odio! Officiis voluptatibus magnam impedit cum, esse cumque iure earum corrupti placeat eaque aliquid culpa officia porro amet excepturi dignissimos vel quasi corporis! Odit praesentium ipsum doloremque fugit consequatur veritatis totam animi rerum deserunt, quod provident vero accusantium error similique iure fugiat ullam quam voluptate eum magnam voluptatum. Molestiae illum, omnis quod pariatur asperiores inventore, ipsum, molestias possimus similique sint delectus eius. Nemo consequatur adipisci magni maiores quibusdam eum quae, veniam rem sit assumenda aspernatur rerum aut, laboriosam expedita, facilis dolorum! Tempora incidunt dolorem alias, voluptas eaque quasi qui omnis, magnam pariatur veritatis ducimus eligendi expedita, atque voluptates provident exercitationem. Cumque cum, illo odit voluptatibus facilis omnis aut error nobis, velit fuga aliquam rerum corrupti beatae ratione debitis consectetur magni labore reprehenderit deserunt quia temporibus?<br><br> Dolore dolorum similique quis reprehenderit, harum aliquam ex accusantium facilis odio hic possimus et voluptates, cumque quam blanditiis quia? Modi animi eligendi consequuntur officiis eveniet eius incidunt unde eos aperiam itaque perferendis, rerum tempora aut quaerat illo numquam sequi culpa. Rerum minus aut qui porro totam, doloremque vel dolore dolorum? Voluptates consequuntur inventore nesciunt sed blanditiis animi optio officiis dolore vitae maiores! Rerum porro quaerat natus velit, consequatur magnam officiis ipsam sapiente minima, quam libero atque excepturi totam! Cum eius magni consequatur, nam, praesentium voluptatem sit sed repellendus dicta libero veritatis voluptas earum nostrum dolores consectetur! Repudiandae iste hic pariatur quaerat tempora inventore delectus cupiditate autem quidem incidunt neque illo quis architecto reprehenderit quae modi, ex, nesciunt eos repellat enim eveniet ipsum similique! Quibusdam cum optio sequi eos itaque, tempore vero dolorem sapiente nobis distinctio accusantium nihil vitae amet earum voluptate, deserunt perspiciatis aliquam est accusamus placeat asperiores soluta eligendi, eaque corrupti. Nulla non nemo error consectetur maiores pariatur porro fugit minima numquam, ratione quia distinctio? Accusamus labore vero veniam, nostrum ipsam minima quos quisquam, blanditiis doloremque enim recusandae ea non quam cupiditate ducimus.<br><br> Explicabo, aliquam nemo? Perferendis facilis distinctio excepturi minus. Fuga nesciunt a quos ipsa sit amet aliquam quas quis rem aperiam cupiditate tempore fugiat possimus in dignissimos nulla mollitia laboriosam voluptate aliquid omnis doloremque iure repudiandae, qui quae? Nisi quo nulla non quia? Incidunt modi dolores, harum veritatis aspernatur sit doloribus atque voluptatem eius laborum aliquam, quam, facere velit dicta repellat tenetur illum doloremque consectetur ut corrupti deserunt. Minus beatae distinctio dolorem quam quod nemo esse ex tempore, id consequatur quia non, expedita placeat? Tempore natus quaerat deleniti aliquam? Ut, illo.</p>
+
+
+    </section>
+
+    <section id="feedback">
+        <div class="d-flex justify-content-center align-items-center  "><h2 class="productheading mt-4">Feedback</h2></div> 
+
+        <div class=" my-5 d-flex justify-content-center">
+          
+
+
+            <form class="w-50 formbg p-5">
+    
+    
+                <div class="form-group ">
+                  <label for="exampleInputEmail1">Full Name</label>
+                  <input type="text" class="form-control my-3" id="fname" aria-describedby="emailHelp" placeholder="Enter Full Name">
+                </div>
+    
+                <div class="form-group ">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control my-3" id="exampleInputPassword1" placeholder="Password">
+                </div>
+    
+                
+    
+                <div class="form-group ">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control my-3" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  </div>
+    
+                  <div class="form-group ">
+                    <label for="exampleInputEmail1">Your Message</label>
+                    <input type="text" class="form-control my-3" id="message" aria-describedby="emailHelp" placeholder="Enter Your Message">
+                  
+                  </div>
+    
+                  
+    
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input " id="exampleCheck1">
+                    <label class="form-check-label " for="exampleCheck1">Terms & Conditions</label>
+                  </div>
+    
+                  
+    
+    
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary my-4 " data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                    Submit
+                  </button>
+                
+    
+    
+    
+              </form>
+
+              <!-- Modal -->
+     <div>
+        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel2">Thank You!</h5>
+                  
+                </div>
+                <div class="modal-body">
+                  Thank You! For Giving Us A Feedback. We Will Get Back You Soon..!
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    
+            </div>
+
+
+    </section>
+
+    <footer>
+
+        <div class="footer d-flex justify-content-center align-items-center text-light pb-1 pt-3 mt-4">
+            <p>Copyright &copy; Dipak Bhise</p>
+
+        </div>
+
+
+    </footer>
+
+
+
+
+    <script src="main.js"></script>
+    
+
+</body>
+
+</html>
